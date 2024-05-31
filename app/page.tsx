@@ -23,8 +23,15 @@ export default function Home() {
         setImageUrl(json.imageUrl);
         setLoading(false);
       }}>Submit</button>
+      {imageUrl && (
+        <div>
+          <a href={imageUrl} download>
+            <button className="bg-blue-500 text-white p-2 rounded">Download Image</button>
+          </a>
+        </div>
+      )}
       {loading && <p>Loading...</p>}
       {imageUrl && <Image alt="UML diagram" src={imageUrl} width={2000} height={4000} />}
-    </main>
+      </main>
   );
 }
